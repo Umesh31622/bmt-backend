@@ -9,6 +9,6 @@ router.get("/", (req, res) => {
     bookings: 50,
     revenue: 50000,
   });
-});
+}); 
 
 module.exports = router;

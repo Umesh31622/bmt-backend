@@ -33,3 +33,28 @@ exports.updateSupplierStatus = async (req, res) => {
     res.status(400).json({ message: "Failed to update status" });
   }
 };
+
+
+
+
+exports.updateSupplier = async (req, res) => {
+  try {
+    const updated = await Supplier.findByIdAndUpdate(
+      req.params.id,
+      { ...req.body, modifiedAt: new Date() },
+      { new: true }
+    );
+    res.json(updated);
+  } catch (err) {
+    res.status(400).json({ message: "Failed to update supplier" });
+  }
+};
+
+exports.deleteSupplier = async (req, res) => {
+  try {
+    await Supplier.findByIdAndDelete(req.params.id);
+    res.json({ message: "Supplier deleted successfully" });
+  } catch (err) {
+    res.status(400).json({ message: "Failed to delete supplier" });
+  }
+};
