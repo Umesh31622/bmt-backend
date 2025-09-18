@@ -75,6 +75,21 @@ const contactRoutes = require("./routes/contactRoutes");
 const blogCategoryRoutes = require("./routes/blogCategoryRoutes");
 const airportRoutes = require("./routes/airportRoutes");
 
+
+
+const clubMemberRoutes = require("./routes/memberRoutes");
+const clubEventRoutes = require("./routes/clubEventRoutes");
+const clubBookingRoutes = require("./routes/clubBookingRoutes");
+const clubPaymentRoutes = require("./routes/clubPaymentRoutes");
+
+
+
+
+
+
+
+
+
 const busRouteRoutes = require("./routes/busRouteRoutes");
 const busBookingRoutes = require("./routes/busBookingRoutes");
 const busAmendmentRoutes = require("./routes/busAmendmentRoutes");
@@ -118,6 +133,18 @@ app.use('/uploads', express.static('uploads'));
 app.use("/api/users", userRoutes);
 app.use("/api/suppliers", supplierRoutes);
 // app.use('/api/fares', fareRoutes);
+
+
+
+app.use("/api/club-members", clubMemberRoutes);
+app.use("/api/club-events", clubEventRoutes);
+app.use("/api/club-bookings", clubBookingRoutes);
+app.use("/api/club-payments", clubPaymentRoutes);
+
+
+
+
+
 
 
 
